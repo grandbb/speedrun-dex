@@ -131,9 +131,7 @@ describe("🚩 Challenge: ⚖️ 🪙 DEX", function () {
 
       const userBalBefore = await balloons.balanceOf(user2.address);
       const tx = dex.connect(user2).ethToToken({ value: xInput });
-      await expect(tx)
-        .to.emit(dex, "EthToTokenSwap")
-        .withArgs(user2.address, expectedYOutput, xInput);
+      await expect(tx).to.emit(dex, "EthToTokenSwap").withArgs(user2.address, expectedYOutput, xInput);
       await tx;
 
       const userBalAfter = await balloons.balanceOf(user2.address);

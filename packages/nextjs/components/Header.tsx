@@ -6,10 +6,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { hardhat } from "viem/chains";
 import { Bars3Icon, BugAntIcon } from "@heroicons/react/24/outline";
+import { BoltIcon, KeyIcon } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick, useTargetNetwork } from "~~/hooks/scaffold-eth";
-import { KeyIcon, BoltIcon } from "@heroicons/react/24/outline";
-
 
 type HeaderMenuLink = {
   label: string;
@@ -19,24 +18,24 @@ type HeaderMenuLink = {
 
 export const menuLinks: HeaderMenuLink[] = [
   {
-    label: 'Home',
-    href: '/'
+    label: "Home",
+    href: "/",
   },
   {
-    label: 'DEX',
-    href: '/dex',
-    icon: <KeyIcon className="h-4 w-4" />
+    label: "DEX",
+    href: "/dex",
+    icon: <KeyIcon className="h-4 w-4" />,
   },
   {
-    label: 'Events',
-    href: '/events',
-    icon: <BoltIcon className="h-4 w-4" />
+    label: "Events",
+    href: "/events",
+    icon: <BoltIcon className="h-4 w-4" />,
   },
   {
-    label: 'Debug Contracts',
-    href: '/debug',
-    icon: <BugAntIcon className="h-4 w-4" />
-  }
+    label: "Debug Contracts",
+    href: "/debug",
+    icon: <BugAntIcon className="h-4 w-4" />,
+  },
 ];
 
 export const HeaderMenuLinks = () => {

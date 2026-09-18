@@ -1,12 +1,11 @@
 import type { NextConfig } from "next";
 
-
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   devIndicators: false,
   typescript: {
-    ignoreBuildErrors: true
-  }
+    ignoreBuildErrors: true,
+  },
 };
 
 const isIpfs = process.env.NEXT_PUBLIC_IPFS_BUILD === "true";
@@ -18,7 +17,5 @@ if (isIpfs) {
     unoptimized: true,
   };
 }
-
-
 
 module.exports = nextConfig;

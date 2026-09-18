@@ -118,10 +118,9 @@
 .link:hover {
   opacity: 80%;
 }
-  
 
-  /* -- EXTENSION OVERRIDES -- */
-  
+/* -- EXTENSION OVERRIDES -- */
+
 @plugin "daisyui/theme" {
   name: "light";
 
@@ -181,7 +180,7 @@
 
 @theme inline {
   --font-space-grotesk: var(--font-space-grotesk);
-};
+}
 
 /* Override Scaffold UI theme colors */
 html[data-theme] {

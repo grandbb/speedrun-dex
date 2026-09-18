@@ -1,13 +1,12 @@
-
 "use client";
 
-import { useAccount } from "wagmi";
+import Image from "next/image";
+import Link from "next/link";
 import { Address } from "@scaffold-ui/components";
 import type { NextPage } from "next";
-import Link from "next/link";
+import { useAccount } from "wagmi";
 import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth";
-import Image from "next/image";
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
@@ -26,7 +25,7 @@ const Home: NextPage = () => {
             <p className="my-2 font-medium">Connected Address:</p>
             <Address address={connectedAddress} chain={targetNetwork} />
           </div>
-          
+
           <div className="flex items-center flex-col flex-grow pt-10">
             <div className="px-5">
               <h1 className="text-center mb-6">
@@ -61,7 +60,6 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-
         </div>
 
         <div className="grow bg-base-300 w-full mt-16 px-8 py-12">

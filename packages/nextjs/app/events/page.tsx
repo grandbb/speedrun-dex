@@ -6,21 +6,26 @@ import { formatEther } from "viem";
 import { useScaffoldEventHistory } from "~~/hooks/scaffold-eth";
 
 const Events: NextPage = () => {
+  // The challenge UI intentionally reads the small, bounded Sepolia deployment history directly.
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   const { data: EthToTokenEvents, isLoading: isEthToTokenEventsLoading } = useScaffoldEventHistory({
     contractName: "DEX",
     eventName: "EthToTokenSwap",
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   const { data: tokenToEthEvents, isLoading: isTokenToEthEventsLoading } = useScaffoldEventHistory({
     contractName: "DEX",
     eventName: "TokenToEthSwap",
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   const { data: liquidityProvidedEvents, isLoading: isLiquidityProvidedEventsLoading } = useScaffoldEventHistory({
     contractName: "DEX",
     eventName: "LiquidityProvided",
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   const { data: liquidityRemovedEvents, isLoading: isLiquidityRemovedEventsLoading } = useScaffoldEventHistory({
     contractName: "DEX",
     eventName: "LiquidityRemoved",

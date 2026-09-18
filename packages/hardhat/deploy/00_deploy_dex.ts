@@ -29,16 +29,20 @@ export default deployScript(
       args: [balloons.address],
     });
 
-    // // CHECKPOINT 2: Replace with your front-end address to get 10 balloons on deploy.
-    // // Default is the Hardhat test account #1 — works out-of-the-box on local.
-    // const frontendAddress = "YOUR_FRONTEND_ADDRESS";
-    // await execute(balloons, { functionName: "transfer", args: [frontendAddress, parseEther("10")], account: deployer });
+    // Give the builder wallet tokens for trying both swap directions in the public demo.
+    const frontendAddress = "0x11315Cce8f009e4CB4234FFEAF2E860b84E5b0f6";
+    await execute(balloons, { functionName: "transfer", args: [frontendAddress, parseEther("10")], account: deployer });
 
-    // // CHECKPOINT 3: Uncomment to init DEX on deploy:
-    // console.log("Approving DEX (" + dex.address + ") to take Balloons from main account...");
-    // await execute(balloons, { functionName: "approve", args: [dex.address, parseEther("100")], account: deployer });
-    // console.log("INIT exchange...");
-    // await execute(dex, { functionName: "init", args: [parseEther("5")], value: parseEther("5"), account: deployer });
+    // Seed a small but functional Sepolia pool while keeping testnet funding requirements low.
+    console.log("Approving DEX (" + dex.address + ") to take Balloons from main account...");
+    await execute(balloons, { functionName: "approve", args: [dex.address, parseEther("5")], account: deployer });
+    console.log("INIT exchange...");
+    await execute(dex, {
+      functionName: "init",
+      args: [parseEther("5")],
+      value: parseEther("0.0001"),
+      account: deployer,
+    });
   },
   // Tags are useful if you have multiple deploy files and only want to run one of them.
   // e.g. yarn deploy --tags DEX
