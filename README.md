@@ -5,7 +5,8 @@ Completed SpeedRun Ethereum DEX challenge for `0x11315Cce8f009e4CB4234FFEAF2E860
 - Constant-product ETH/BAL swaps with a 0.3% fee
 - Proportional liquidity deposits and withdrawals
 - 12/12 challenge tests passing
-- Sepolia deployment and public demo links will be added after deployment
+- Sepolia DEX: https://sepolia.etherscan.io/address/0x54bd09937c964b741498fa90a50d789d791ef13b
+- Public demo: https://grandbb-speedrun-dex.vercel.app/dex
 
 <h4 align="center">
   <a href="https://docs.scaffoldeth.io">Documentation</a> |
