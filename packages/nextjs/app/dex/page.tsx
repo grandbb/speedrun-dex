@@ -185,7 +185,7 @@ const Dex: NextPage = () => {
                     try {
                       await writeDexContractAsync({
                         functionName: "tokenToEth",
-                        args: [NUMBER_REGEX.test(tokenToETHAmount) ? parseEther(tokenToETHAmount) : tokenToETHAmount],
+                        args: [NUMBER_REGEX.test(tokenToETHAmount) ? parseEther(tokenToETHAmount) : 0n],
                       });
                       setEthToTokenAmount("");
                       setTokenToETHAmount("");
@@ -246,7 +246,7 @@ const Dex: NextPage = () => {
                     try {
                       await writeDexContractAsync({
                         functionName: "withdraw",
-                        args: [NUMBER_REGEX.test(withdrawAmount) ? parseEther(withdrawAmount) : withdrawAmount],
+                        args: [NUMBER_REGEX.test(withdrawAmount) ? parseEther(withdrawAmount) : 0n],
                       });
                       setWithdrawAmount("");
                       setWithdrawInputKey(k => k + 1);
@@ -295,7 +295,7 @@ const Dex: NextPage = () => {
                         functionName: "approve",
                         args: [
                           approveSpender as AddressType,
-                          NUMBER_REGEX.test(approveAmount) ? parseEther(approveAmount) : approveAmount,
+                          NUMBER_REGEX.test(approveAmount) ? parseEther(approveAmount) : 0n,
                         ],
                       });
                       setApproveSpender("");
